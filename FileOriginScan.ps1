@@ -790,11 +790,13 @@ if ($records.Count -eq 0) {
         $rConf = $r.Confidence
         if ([string]::IsNullOrWhiteSpace($rConf)) { $rConf = '-' }
         $sigText = '-'
-        if ($r.SignerName) {
-            $sigText = $r.SignerName
-            if ($r.SigStatus -and $r.SigStatus -ne 'Valid') { $sigText = $sigText + '（' + $r.SigStatus + '）' }
-        } elseif ($r.SigStatus) {
-            $sigText = '未签名（' + $r.SigStatus + '）'
+        if ($script:ExecExtensions -contains $r.Ext) {
+            if ($r.SignerName) {
+                $sigText = $r.SignerName
+                if ($r.SigStatus -and $r.SigStatus -ne 'Valid') { $sigText = $sigText + '（' + $r.SigStatus + '）' }
+            } elseif ($r.SigStatus) {
+                $sigText = '未签名（' + $r.SigStatus + '）'
+            }
         }
         $archText = $r.Arch
         if ([string]::IsNullOrWhiteSpace($archText)) { $archText = '-' }

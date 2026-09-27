@@ -1,7 +1,7 @@
 ﻿{
     "Tool":  "散落文件归属诊断器 v1.1.0",
-    "ScannedAt":  "2026-09-27T16:01:57",
-    "Target":  "D:\\CODEX\\2026-09-27\\wo-m\\work\\demo\\LooseFiles",
+    "ScannedAt":  "2026-09-27T16:13:19",
+    "Target":  "D:\\Demo\\LooseFiles",
     "Recursive":  false,
     "FileCount":  4,
     "TotalBytes":  686377,
@@ -59,7 +59,7 @@
     "Files":  [
                   {
                       "Name":  "msvcp140.dll",
-                      "Dir":  "d:\\codex\\2026-09-27\\wo-m\\work\\demo\\loosefiles",
+                      "Dir":  "d:\\demo\\loosefiles",
                       "Ext":  ".dll",
                       "Arch":  "x64",
                       "Size":  557728,
@@ -76,7 +76,7 @@
                   },
                   {
                       "Name":  "notes.txt",
-                      "Dir":  "d:\\codex\\2026-09-27\\wo-m\\work\\demo\\loosefiles",
+                      "Dir":  "d:\\demo\\loosefiles",
                       "Ext":  ".txt",
                       "Arch":  "",
                       "Size":  9,
@@ -93,7 +93,7 @@
                   },
                   {
                       "Name":  "unknown-tool.exe",
-                      "Dir":  "d:\\codex\\2026-09-27\\wo-m\\work\\demo\\loosefiles",
+                      "Dir":  "d:\\demo\\loosefiles",
                       "Ext":  ".exe",
                       "Arch":  "",
                       "Size":  4096,
@@ -110,7 +110,7 @@
                   },
                   {
                       "Name":  "vcruntime140.dll",
-                      "Dir":  "d:\\codex\\2026-09-27\\wo-m\\work\\demo\\loosefiles",
+                      "Dir":  "d:\\demo\\loosefiles",
                       "Ext":  ".dll",
                       "Arch":  "x64",
                       "Size":  124544,

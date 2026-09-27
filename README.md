@@ -4,6 +4,8 @@ Point it at a messy folder. It tells you which installed program every loose `.e
 
 Windows only. One PowerShell script, no dependencies, nothing to install. Strictly read-only: it never deletes, moves or modifies a file.
 
+![File Origin Scan report](docs/screenshot.png)
+
 ---
 
 ## The problem
