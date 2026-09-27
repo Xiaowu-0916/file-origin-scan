@@ -1,0 +1,129 @@
+﻿{
+    "Tool":  "散落文件归属诊断器 v1.1.0",
+    "ScannedAt":  "2026-09-27T16:01:57",
+    "Target":  "D:\\CODEX\\2026-09-27\\wo-m\\work\\demo\\LooseFiles",
+    "Recursive":  false,
+    "FileCount":  4,
+    "TotalBytes":  686377,
+    "Signed":  true,
+    "Unsigned":  1,
+    "Suspicious":  1,
+    "Architectures":  [
+                          {
+                              "Arch":  "x64",
+                              "Count":  2
+                          }
+                      ],
+    "Conclusions":  [
+                        "共 4 个文件，其中 2 个可归属到 1 个来源，1 个未能自动识别，1 个来源不明。",
+                        "有 1 个可执行文件既没有版本信息、也没有数字签名，无法反推来源；它们可能是便携程序的组成文件，也可能是软件卸载后留下的残留。",
+                        "未归属的 1 个文件需要人工确认后再处理，不要批量删除。",
+                        "签名校验发现 1 个可执行文件没有有效数字签名，无法从签名信息判断来源。"
+                    ],
+    "Actions":  [
+                    "先不要批量删除。已归属的文件属于正在使用的软件，删除或移动会造成程序损坏或启动失败。",
+                    "未归属文件逐个核对来源：右键 → 属性 → 详细信息（看\"公司/产品名称\"）与\"数字签名\"标签页，或在 PowerShell 里执行 Get-AuthenticodeSignature \u0027路径\u0027 查看签名者。",
+                    "其中有 1 个文档/媒体/压缩包类文件，属于个人文件的可能性更大，建议归档到 D:\\个人资料\\\u003c分类\u003e 这样的独立目录，而不是留在根目录。",
+                    "对来源不明的可执行文件，先记录指纹再决定：Get-FileHash \u0027路径\u0027 -Algorithm SHA256 存档，必要时送到 VirusTotal 一类服务核对；它们也可能是某个便携程序的组成文件，删除前请确认对应程序还能正常启动。",
+                    "未签名的可执行文件本身不等于有问题（很多开源软件与自编译程序都不签名），但在盘符根目录、下载目录这类位置出现时，值得优先排查来源。"
+                ],
+    "Groups":  [
+                   {
+                       "Product":  "Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35211",
+                       "Count":  2,
+                       "Size":  682272,
+                       "Confidence":  "中",
+                       "Extensions":  ".dll",
+                       "Sample":  "msvcp140.dll、vcruntime140.dll",
+                       "Reason":  "文件公司名「Microsoft Corporation」与发布者「Microsoft Corporation」同源；数字签名者「Microsoft Windows Software Compatibility Publisher」与发布者一致；文件描述「Microsoft® C Runtime Library」与该软件名称关键词重合"
+                   },
+                   {
+                       "Product":  "来源不明（无版本信息、无数字签名）",
+                       "Count":  1,
+                       "Size":  4096,
+                       "Confidence":  "",
+                       "Extensions":  ".exe",
+                       "Sample":  "unknown-tool.exe",
+                       "Reason":  "可执行文件，但既无版本信息也无数字签名，且未匹配到任何已安装软件；可能是便携程序文件、自编译程序，或卸载残留"
+                   },
+                   {
+                       "Product":  "未识别",
+                       "Count":  1,
+                       "Size":  9,
+                       "Confidence":  "",
+                       "Extensions":  ".txt",
+                       "Sample":  "notes.txt",
+                       "Reason":  "版本信息与签名均无法匹配到已安装软件"
+                   }
+               ],
+    "Files":  [
+                  {
+                      "Name":  "msvcp140.dll",
+                      "Dir":  "d:\\codex\\2026-09-27\\wo-m\\work\\demo\\loosefiles",
+                      "Ext":  ".dll",
+                      "Arch":  "x64",
+                      "Size":  557728,
+                      "Company":  "Microsoft Corporation",
+                      "ProductName":  "Microsoft® Visual Studio®",
+                      "Description":  "Microsoft® C Runtime Library",
+                      "FileVersion":  "14.44.35211.0",
+                      "SignerName":  "Microsoft Windows Software Compatibility Publisher",
+                      "SigStatus":  "Valid",
+                      "Product":  "Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35211",
+                      "Confidence":  "中",
+                      "Reason":  "文件公司名「Microsoft Corporation」与发布者「Microsoft Corporation」同源；数字签名者「Microsoft Windows Software Compatibility Publisher」与发布者一致；文件描述「Microsoft® C Runtime Library」与该软件名称关键词重合",
+                      "Kind":  "App"
+                  },
+                  {
+                      "Name":  "notes.txt",
+                      "Dir":  "d:\\codex\\2026-09-27\\wo-m\\work\\demo\\loosefiles",
+                      "Ext":  ".txt",
+                      "Arch":  "",
+                      "Size":  9,
+                      "Company":  "",
+                      "ProductName":  "",
+                      "Description":  "",
+                      "FileVersion":  "",
+                      "SignerName":  "",
+                      "SigStatus":  "UnknownError",
+                      "Product":  "未识别",
+                      "Confidence":  "",
+                      "Reason":  "版本信息与签名均无法匹配到已安装软件",
+                      "Kind":  "Unknown"
+                  },
+                  {
+                      "Name":  "unknown-tool.exe",
+                      "Dir":  "d:\\codex\\2026-09-27\\wo-m\\work\\demo\\loosefiles",
+                      "Ext":  ".exe",
+                      "Arch":  "",
+                      "Size":  4096,
+                      "Company":  "",
+                      "ProductName":  "",
+                      "Description":  "",
+                      "FileVersion":  "",
+                      "SignerName":  "",
+                      "SigStatus":  "UnknownError",
+                      "Product":  "来源不明（无版本信息、无数字签名）",
+                      "Confidence":  "",
+                      "Reason":  "可执行文件，但既无版本信息也无数字签名，且未匹配到任何已安装软件；可能是便携程序文件、自编译程序，或卸载残留",
+                      "Kind":  "Suspicious"
+                  },
+                  {
+                      "Name":  "vcruntime140.dll",
+                      "Dir":  "d:\\codex\\2026-09-27\\wo-m\\work\\demo\\loosefiles",
+                      "Ext":  ".dll",
+                      "Arch":  "x64",
+                      "Size":  124544,
+                      "Company":  "Microsoft Corporation",
+                      "ProductName":  "Microsoft® Visual Studio®",
+                      "Description":  "Microsoft® C Runtime Library",
+                      "FileVersion":  "14.44.35211.0",
+                      "SignerName":  "Microsoft Windows Software Compatibility Publisher",
+                      "SigStatus":  "Valid",
+                      "Product":  "Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35211",
+                      "Confidence":  "中",
+                      "Reason":  "文件公司名「Microsoft Corporation」与发布者「Microsoft Corporation」同源；数字签名者「Microsoft Windows Software Compatibility Publisher」与发布者一致；文件描述「Microsoft® C Runtime Library」与该软件名称关键词重合",
+                      "Kind":  "App"
+                  }
+              ]
+}

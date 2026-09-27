@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>文件归属报告 - D:\CODEX\2026-09-27\wo-m\work\demo\LooseFiles</title>
+<style>:root { --ink:#1b1f24; --muted:#5b6672; --line:#dfe4ea; --bg:#f6f7f9; --accent:#1a5fb4; --warn:#b4600a; --danger:#b3261e; --ok:#1a7f4b; }
+* { box-sizing:border-box; }
+body { margin:0; padding:32px 28px 56px; background:var(--bg); color:var(--ink); font:14px/1.65 "Microsoft YaHei UI","Segoe UI",system-ui,sans-serif; }
+main { max-width:1180px; margin:0 auto; }
+h1 { font-size:24px; margin:0 0 6px; }
+h2 { font-size:16px; margin:34px 0 10px; padding-bottom:6px; border-bottom:1px solid var(--line); }
+.sub { color:var(--muted); font-size:13px; margin:0 0 4px; }
+.path { font-family:Consolas,"Cascadia Mono",monospace; color:var(--ink); }
+.stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-top:14px; }
+.stat { background:#fff; border:1px solid var(--line); border-radius:6px; padding:12px 14px; }
+.stat .k { color:var(--muted); font-size:12px; }
+.stat .v { font-size:20px; font-weight:600; margin-top:2px; }
+.stat.warn .v { color:var(--warn); }
+.stat.danger .v { color:var(--danger); }
+.stat.ok .v { color:var(--ok); }
+ol, ul { padding-left:22px; margin:8px 0; }
+li { margin:5px 0; }
+table { width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--line); border-radius:6px; overflow:hidden; margin-top:8px; }
+th, td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+th.num { text-align:right; }
+th { background:#eef1f5; font-weight:600; font-size:12.5px; color:#39424d; white-space:nowrap; }
+tr:last-child td { border-bottom:none; }
+td.num { text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
+td.mono, .mono { font-family:Consolas,"Cascadia Mono",monospace; font-size:12.5px; }
+.tag { display:inline-block; padding:1px 7px; border-radius:10px; font-size:12px; border:1px solid var(--line); background:#f2f4f7; color:#39424d; white-space:nowrap; }
+.tag.high { background:#e7f4ec; border-color:#bfe0cb; color:#1a7f4b; }
+.tag.mid  { background:#eaf1fb; border-color:#c6d9f4; color:#1a5fb4; }
+.tag.low  { background:#fdf3e3; border-color:#f0dcbc; color:#8a5a10; }
+.tag.ref  { background:#f2f0fa; border-color:#d8d2ee; color:#5145a5; }
+.tag.none { background:#f3f4f6; border-color:#e2e5e9; color:#6b7280; }
+.note { background:#fff; border:1px solid var(--line); border-left:3px solid var(--accent); border-radius:4px; padding:12px 14px; color:#2c333b; }
+.reason { color:var(--muted); font-size:12.5px; }
+footer { margin-top:40px; padding-top:14px; border-top:1px solid var(--line); color:var(--muted); font-size:12.5px; }</style></head><body><main>
+<h1>散落文件归属报告</h1>
+<p class="sub">扫描目录：<span class="path">D:\CODEX\2026-09-27\wo-m\work\demo\LooseFiles</span> （仅当前层）</p>
+<p class="sub">扫描时间：2026-09-27 16:01:57　|　工具：散落文件归属诊断器 v1.1.0</p>
+<h2>概览</h2><div class="stats">
+<div class="stat"><div class="k">文件总数</div><div class="v">4</div></div>
+<div class="stat"><div class="k">占用空间</div><div class="v">670.3 KB</div></div>
+<div class="stat ok"><div class="k">已归属</div><div class="v">2</div></div>
+<div class="stat warn"><div class="k">未归属</div><div class="v">1</div></div>
+<div class="stat danger"><div class="k">来源不明</div><div class="v">1</div></div>
+<div class="stat warn"><div class="k">未签名可执行文件</div><div class="v">1</div></div>
+<div class="stat"><div class="k">已装软件记录</div><div class="v">24</div></div>
+</div>
+<h2>结论</h2><ol>
+<li>共 4 个文件，其中 2 个可归属到 1 个来源，1 个未能自动识别，1 个来源不明。</li>
+<li>有 1 个可执行文件既没有版本信息、也没有数字签名，无法反推来源；它们可能是便携程序的组成文件，也可能是软件卸载后留下的残留。</li>
+<li>未归属的 1 个文件需要人工确认后再处理，不要批量删除。</li>
+<li>签名校验发现 1 个可执行文件没有有效数字签名，无法从签名信息判断来源。</li>
+</ol>
+<h2>归属明细</h2>
+<table><thead><tr><th>来源</th><th class="num">文件数</th><th class="num">大小</th><th>置信度</th><th>扩展名</th><th>判定依据</th></tr></thead><tbody>
+<tr>
+<td>Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35211</td>
+<td class="num">2</td>
+<td class="num">666.3 KB</td>
+<td><span class="tag mid">中</span></td>
+<td class="mono">.dll</td>
+<td class="reason">文件公司名「Microsoft Corporation」与发布者「Microsoft Corporation」同源；数字签名者「Microsoft Windows Software Compatibility Publisher」与发布者一致；文件描述「Microsoft&#174; C Runtime Library」与该软件名称关键词重合</td>
+</tr>
+<tr>
+<td>来源不明（无版本信息、无数字签名）</td>
+<td class="num">1</td>
+<td class="num">4.0 KB</td>
+<td><span class="tag none">-</span></td>
+<td class="mono">.exe</td>
+<td class="reason">可执行文件，但既无版本信息也无数字签名，且未匹配到任何已安装软件；可能是便携程序文件、自编译程序，或卸载残留</td>
+</tr>
+<tr>
+<td>未识别</td>
+<td class="num">1</td>
+<td class="num">9 B</td>
+<td><span class="tag none">-</span></td>
+<td class="mono">.txt</td>
+<td class="reason">版本信息与签名均无法匹配到已安装软件</td>
+</tr>
+</tbody></table>
+<h2>文件清单</h2>
+<table><thead><tr><th>文件名</th><th class="num">大小</th><th>归属</th><th>置信度</th><th>架构</th><th>公司 / 产品</th><th>数字签名</th><th class="num">修改时间</th></tr></thead><tbody>
+<tr>
+<td class="mono">msvcp140.dll</td>
+<td class="num">544.7 KB</td>
+<td>Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35211</td>
+<td><span class="tag mid">中</span></td>
+<td class="mono">x64</td>
+<td class="reason">Microsoft Corporation / Microsoft&#174; Visual Studio&#174;</td>
+<td class="reason">Microsoft Windows Software Compatibility Publisher</td>
+<td class="num">2025-06-11 05:21</td>
+</tr>
+<tr>
+<td class="mono">vcruntime140.dll</td>
+<td class="num">121.6 KB</td>
+<td>Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35211</td>
+<td><span class="tag mid">中</span></td>
+<td class="mono">x64</td>
+<td class="reason">Microsoft Corporation / Microsoft&#174; Visual Studio&#174;</td>
+<td class="reason">Microsoft Windows Software Compatibility Publisher</td>
+<td class="num">2025-06-11 05:21</td>
+</tr>
+<tr>
+<td class="mono">unknown-tool.exe</td>
+<td class="num">4.0 KB</td>
+<td>来源不明（无版本信息、无数字签名）</td>
+<td><span class="tag none">-</span></td>
+<td class="mono">-</td>
+<td class="reason"></td>
+<td class="reason">未签名（UnknownError）</td>
+<td class="num">2026-09-27 16:01</td>
+</tr>
+<tr>
+<td class="mono">notes.txt</td>
+<td class="num">9 B</td>
+<td>未识别</td>
+<td><span class="tag none">-</span></td>
+<td class="mono">-</td>
+<td class="reason"></td>
+<td class="reason">未签名（UnknownError）</td>
+<td class="num">2026-09-27 16:01</td>
+</tr>
+</tbody></table>
+<h2>未归属文件（需人工确认）</h2>
+<table><thead><tr><th>文件名</th><th class="num">大小</th><th>扩展名</th><th class="num">修改时间</th></tr></thead><tbody>
+<tr><td class="mono">notes.txt</td><td class="num">9 B</td><td class="mono">.txt</td><td class="num">2026-09-27 16:01</td></tr>
+</tbody></table>
+<h2>来源不明的可执行文件（需人工确认）</h2>
+<p class="note">这些文件没有版本信息、没有数字签名，也没有匹配到任何已安装软件。可能是某个便携程序的组成文件，也可能是软件卸载后的残留；不要仅凭"看起来像垃圾"就删除。</p>
+<table><thead><tr><th>文件名</th><th class="num">大小</th><th>架构</th><th>扩展名</th><th class="num">修改时间</th></tr></thead><tbody>
+<tr><td class="mono">unknown-tool.exe</td><td class="num">4.0 KB</td><td class="mono">-</td><td class="mono">.exe</td><td class="num">2026-09-27 16:01</td></tr>
+</tbody></table>
+<h2>建议动作</h2><ol>
+<li>先不要批量删除。已归属的文件属于正在使用的软件，删除或移动会造成程序损坏或启动失败。</li>
+<li>未归属文件逐个核对来源：右键 → 属性 → 详细信息（看&quot;公司/产品名称&quot;）与&quot;数字签名&quot;标签页，或在 PowerShell 里执行 Get-AuthenticodeSignature &#39;路径&#39; 查看签名者。</li>
+<li>其中有 1 个文档/媒体/压缩包类文件，属于个人文件的可能性更大，建议归档到 D:\个人资料\&lt;分类&gt; 这样的独立目录，而不是留在根目录。</li>
+<li>对来源不明的可执行文件，先记录指纹再决定：Get-FileHash &#39;路径&#39; -Algorithm SHA256 存档，必要时送到 VirusTotal 一类服务核对；它们也可能是某个便携程序的组成文件，删除前请确认对应程序还能正常启动。</li>
+<li>未签名的可执行文件本身不等于有问题（很多开源软件与自编译程序都不签名），但在盘符根目录、下载目录这类位置出现时，值得优先排查来源。</li>
+</ol>
+<footer>判定依据：卸载注册表 InstallLocation、文件版本信息（公司/产品/描述）、Authenticode 数字签名、PE 头架构识别，以及内置的公共组件对照表。置信度「高」= 安装路径直接命中；「中」= 产品名称命中；「低」= 仅厂商同源；「参考」= 命中公共组件库。报告由 散落文件归属诊断器 v1.1.0 生成，删除任何文件前请自行复核。</footer>
+</main></body></html>

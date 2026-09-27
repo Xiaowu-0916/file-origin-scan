@@ -1,0 +1,5 @@
+﻿"Name","Ext","Arch","Size","Product","Confidence","Kind","Company","ProductName","Description","FileVersion","SignerName","SigStatus","Modified","Dir"
+"msvcp140.dll",".dll","x64","557728","Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35211","中","App","Microsoft Corporation","Microsoft® Visual Studio®","Microsoft® C Runtime Library","14.44.35211.0","Microsoft Windows Software Compatibility Publisher","Valid","2025-06-11 05:21:56","d:\codex\2026-09-27\wo-m\work\demo\loosefiles"
+"vcruntime140.dll",".dll","x64","124544","Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35211","中","App","Microsoft Corporation","Microsoft® Visual Studio®","Microsoft® C Runtime Library","14.44.35211.0","Microsoft Windows Software Compatibility Publisher","Valid","2025-06-11 05:21:58","d:\codex\2026-09-27\wo-m\work\demo\loosefiles"
+"unknown-tool.exe",".exe","","4096","来源不明（无版本信息、无数字签名）","","Suspicious","","","","","","UnknownError","2026-09-27 16:01:56","d:\codex\2026-09-27\wo-m\work\demo\loosefiles"
+"notes.txt",".txt","","9","未识别","","Unknown","","","","","","UnknownError","2026-09-27 16:01:56","d:\codex\2026-09-27\wo-m\work\demo\loosefiles"

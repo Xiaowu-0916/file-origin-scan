@@ -1,0 +1,17 @@
+# Reports produced by running the tool
+reports/
+*.html
+*.json
+*.csv
+
+# but keep tracked samples
+!examples/*.html
+!examples/*.json
+!examples/*.csv
+
+# editor / OS noise
+.vscode/
+.idea/
+*.user
+Thumbs.db
+.DS_Store

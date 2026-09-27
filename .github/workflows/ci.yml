@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Integration tests
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Syntax check
+        shell: pwsh
+        run: |
+          $errors = $null
+          [System.Management.Automation.Language.Parser]::ParseFile(
+            "$PWD/FileOriginScan.ps1", [ref]$null, [ref]$errors) | Out-Null
+          if ($errors.Count -gt 0) {
+            $errors | ForEach-Object { Write-Error "$($_.Extent.StartLineNumber): $($_.Message)" }
+            exit 1
+          }
+          Write-Host "No syntax errors."
+
+      - name: Integration tests (Windows PowerShell 5.1)
+        shell: powershell
+        run: ./tests/Test-FileOriginScan.ps1
+
+      - name: Integration tests (PowerShell 7)
+        shell: pwsh
+        run: ./tests/Test-FileOriginScan.ps1
